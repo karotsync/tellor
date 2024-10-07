@@ -31,7 +31,8 @@ echo "export TELLOR_PORT="54"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-# download binary
+**download binary**
+```
 cd $HOME
 rm -rf layer
 git clone https://github.com/tellor-io/layer
@@ -39,6 +40,7 @@ cd layer
 git checkout v0.7.1-fix
 go build ./cmd/layerd
 mv layerd $HOME/go/bin
+```
 
 # config and init app
 layerd init "itrocket_rpc" --chain-id layertest-2
