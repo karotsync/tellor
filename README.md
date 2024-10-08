@@ -42,11 +42,13 @@ go build ./cmd/layerd
 mv layerd $HOME/go/bin
 ```
 
-# config and init app
+**config and init app**
+```
 layerd init "itrocket_rpc" --chain-id layertest-2
 sed -i -e "s|^node *=.*|node = \"tcp://localhost:${TELLOR_PORT}657\"|" $HOME/.layer/config/client.toml
 sed -i -e "s|^keyring-backend *=.*|keyring-backend = \"test\"|" $HOME/.layer/config/client.toml
 sed -i -e "s|^chain-id *=.*|chain-id = \"layertest-1\"|" $HOME/.layer/config/client.toml
+```
 
 # download genesis and addrbook
 wget -O $HOME/.layer/config/genesis.json https://server-5.itrocket.net/testnet/tellor/genesis.json
