@@ -50,9 +50,11 @@ sed -i -e "s|^keyring-backend *=.*|keyring-backend = \"test\"|" $HOME/.layer/con
 sed -i -e "s|^chain-id *=.*|chain-id = \"layertest-1\"|" $HOME/.layer/config/client.toml
 ```
 
-# download genesis and addrbook
+**download genesis and addrbook**
+```
 wget -O $HOME/.layer/config/genesis.json https://server-5.itrocket.net/testnet/tellor/genesis.json
 wget -O $HOME/.layer/config/addrbook.json  https://server-5.itrocket.net/testnet/tellor/addrbook.json
+```
 
 # set seeds and peers
 SEEDS="f9e5273c92ee8635c81100f00c49d11068fef853@tellor-testnet-seed.itrocket.net:19656"
