@@ -56,12 +56,13 @@ wget -O $HOME/.layer/config/genesis.json https://server-5.itrocket.net/testnet/t
 wget -O $HOME/.layer/config/addrbook.json  https://server-5.itrocket.net/testnet/tellor/addrbook.json
 ```
 
-# set seeds and peers
+**set seeds and peers**
+```
 SEEDS="f9e5273c92ee8635c81100f00c49d11068fef853@tellor-testnet-seed.itrocket.net:19656"
 PEERS="0e9c659ff5ec9d226b6952d5b42e36daf1b13485@tellor-testnet-peer.itrocket.net:54656"
 sed -i -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*seeds *=.*/seeds = \"$SEEDS\"/}" \
        -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*persistent_peers *=.*/persistent_peers = \"$PEERS\"/}" $HOME/.layer/config/config.toml
-
+```
 
 # set custom ports in app.toml
 sed -i.bak -e "s%:1317%:${TELLOR_PORT}317%g;
