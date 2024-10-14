@@ -85,10 +85,12 @@ s%^external_address = \"\"%external_address = \"$(wget -qO- eth0.me):${TELLOR_PO
 s%:26660%:${TELLOR_PORT}660%g" $HOME/.layer/config/config.toml
 ```
 
-# config pruning
+**config pruning**
+```
 sed -i -e "s/^pruning *=.*/pruning = \"custom\"/" $HOME/.layer/config/app.toml
 sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"100\"/" $HOME/.layer/config/app.toml
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"50\"/" $HOME/.layer/config/app.toml
+```
 
 # set minimum gas price, enable prometheus and disable indexing
 sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "1loya"|g' $HOME/.layer/config/app.toml
