@@ -99,7 +99,8 @@ sed -i -e "s/prometheus = false/prometheus = true/" $HOME/.layer/config/config.t
 sed -i -e "s/^indexer *=.*/indexer = \"null\"/" $HOME/.layer/config/config.toml
 ```
 
-# create service file
+**create service file**
+```
 sudo tee /etc/systemd/system/layerd.service > /dev/null <<EOF
 [Unit]
 Description=Tellor node
@@ -114,6 +115,7 @@ LimitNOFILE=65535
 [Install]
 WantedBy=multi-user.target
 EOF
+```
 
 # reset and download snapshot
 layerd tendermint unsafe-reset-all --home $HOME/.layer
