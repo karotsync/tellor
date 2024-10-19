@@ -127,7 +127,8 @@ if curl -s --head curl https://server-5.itrocket.net/testnet/tellor/tellor_2024-
 fi
 ```
 
-# enable and start service
+**enable and start service**
+```
 sudo systemctl daemon-reload
 sudo systemctl enable layerd
 sudo systemctl restart layerd && sudo journalctl -u layerd -f
@@ -136,6 +137,8 @@ pruning: custom: 100/0/50 | indexer: null
 
 source <(curl -s https://itrocket.net/api/testnet/tellor/autoinstall/)
 Create wallet
+```
+
 # to create a new wallet, use the following command. don’t forget to save the mnemonic
 layerd keys add $WALLET
 
