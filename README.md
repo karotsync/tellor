@@ -149,12 +149,14 @@ layerd keys add $WALLET
 layerd keys add $WALLET --recover
 ```
 
-# save wallet and validator address
+**save wallet and validator address**
+```
 WALLET_ADDRESS=$(layerd keys show $WALLET -a)
 VALOPER_ADDRESS=$(layerd keys show $WALLET --bech val -a)
 echo "export WALLET_ADDRESS="$WALLET_ADDRESS >> $HOME/.bash_profile
 echo "export VALOPER_ADDRESS="$VALOPER_ADDRESS >> $HOME/.bash_profile
 source $HOME/.bash_profile
+```
 
 # check sync status, once your node is fully synced, the output from above will print "false"
 layerd status 2>&1 | jq 
