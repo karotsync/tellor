@@ -210,11 +210,13 @@ echo "{\"pubkey\":{\"@type\":\"/cosmos.crypto.ed25519.PubKey\",\"key\":\"$(layer
 }" > validator.json
 ```
 
-# Create a validator using the JSON configuration
+**Create a validator using the JSON configuration**
+```
 layerd tx staking create-validator validator.json \
     --from $WALLET \
     --chain-id layertest-2 \
 	--gas auto --gas-adjustment 1.5 \
+```
 	
 Monitoring
 If you want to have set up a monitoring and alert system use our cosmos nodes monitoring guide with tenderduty
