@@ -238,10 +238,12 @@ sudo ufw allow ${TELLOR_PORT}656/tcp
 sudo ufw enable
 ```
 
-Delete node
+**Delete node**
+```
 sudo systemctl stop layerd
 sudo systemctl disable layerd
 sudo rm -rf /etc/systemd/system/layerd.service
 sudo rm $(which layerd)
 sudo rm -rf $HOME/.layer
 sed -i "/TELLOR_/d" $HOME/.bash_profile
+```
